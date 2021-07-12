@@ -4,11 +4,43 @@
 package sequality;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+  public String getGreeting() {
+    return "Hello World!";
+  }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+  public int sum1() {
+    Calculate calculate = new Calculate();
+    return calculate.sum(2, 3);
+  }
+
+  public int sum2() {
+    Calculate calculate = new Calculate();
+    int b = 0;
+    for (int i = 1; i <= 10; i++) {
+      b = calculate.sum(b, i);
     }
+    return b;
+  }
+
+  public int sum3() {
+    Calculate calculate = new Calculate();
+    int c = 0;
+    for (int i = 1; i <= 10; i = i + 2) {
+      c = calculate.sum(c, i);
+    }
+    return c;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(new App().getGreeting());
+
+    int a = new App().sum1();
+    System.out.printf("2と3の合計は%dです．平均値は%.1fです．\n", a, (double) a / 2);
+
+    int b = new App().sum2();
+    System.out.printf("1から10の合計は%dです．平均値は%.1fです．\n", b, (double) b / 10);
+
+    int c = new App().sum3();
+    System.out.printf("1から10の奇数の合計は%dです．偶数の合計は%dです．\n", c, b - c);
+  }
 }

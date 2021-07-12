@@ -6,10 +6,15 @@ package sequality;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import org.checkerframework.checker.units.qual.A;
+
 public class AppTest {
   @Test
   public void testAppReternHelloWorld() {
     App classUnderTest = new App();
     assertEquals("Hello World!", classUnderTest.getGreeting());
+    assertEquals(5, classUnderTest.sum1());
+    assertEquals(55, classUnderTest.sum2());
+    assertEquals(25, classUnderTest.sum3());
   }
 }
